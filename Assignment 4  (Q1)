@@ -1,0 +1,43 @@
+User avatar
+wwwcharanramlaxman1858
+AUTHOR
+Write C program to accept the details of employee and display them using structure. Details consist of Employee ID, Name, Designation, Department, and Salary.
+PERPLEXITY
+Here is a C program that accepts the details of an employee and displays them using a structure. The details of an employee include Employee ID, Name, Designation, Department, and Salary123:
+#include <stdio.h>
+
+struct Employee {
+  int id;
+  char name;
+  char designation;
+  char department;
+  float salary;
+};
+
+int main() {
+  struct Employee emp;
+
+  printf("Enter Employee ID: ");
+  scanf("%d", &emp.id);
+
+  printf("Enter Employee Name: ");
+  scanf("%s", emp.name);
+
+  printf("Enter Employee Designation: ");
+  scanf("%s", emp.designation);
+
+  printf("Enter Employee Department: ");
+  scanf("%s", emp.department);
+
+  printf("Enter Employee Salary: ");
+  scanf("%f", &emp.salary);
+
+  printf("\nEmployee Details:\n");
+  printf("ID: %d\n", emp.id);
+  printf("Name: %s\n", emp.name);
+  printf("Designation: %s\n", emp.designation);
+  printf("Department: %s\n", emp.department);
+  printf("Salary: %.2f\n", emp.salary);
+
+  return 0;
+}
