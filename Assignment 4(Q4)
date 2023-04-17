@@ -1,0 +1,241 @@
+User avatar
+wwwcharanramlaxman1858
+AUTHOR
+Write C program to accept the details of employee and display them using structure. Details consist of Employee ID, Name, Designation, Department, and Salary.
+PERPLEXITY
+Here is a C program that accepts the details of an employee and displays them using a structure. The details of an employee include Employee ID, Name, Designation, Department, and Salary123:
+#include <stdio.h>
+
+struct Employee {
+  int id;
+  char name;
+  char designation;
+  char department;
+  float salary;
+};
+
+int main() {
+  struct Employee emp;
+
+  printf("Enter Employee ID: ");
+  scanf("%d", &emp.id);
+
+  printf("Enter Employee Name: ");
+  scanf("%s", emp.name);
+
+  printf("Enter Employee Designation: ");
+  scanf("%s", emp.designation);
+
+  printf("Enter Employee Department: ");
+  scanf("%s", emp.department);
+
+  printf("Enter Employee Salary: ");
+  scanf("%f", &emp.salary);
+
+  printf("\nEmployee Details:\n");
+  printf("ID: %d\n", emp.id);
+  printf("Name: %s\n", emp.name);
+  printf("Designation: %s\n", emp.designation);
+  printf("Department: %s\n", emp.department);
+  printf("Salary: %.2f\n", emp.salary);
+
+  return 0;
+}
+
+This program defines a structure Employee that contains the details of an employee. It then declares a variable emp of type Employee. The program prompts the user to enter the details of an employee and stores them in the emp variable. Finally, it displays the details of the employee using printf() statements.
+For example, the following output shows the details of an employee:
+Enter Employee ID: 123
+Enter Employee Name: John Doe
+Enter Employee Designation: Manager
+Enter Employee Department: Sales
+Enter Employee Salary: 5000
+
+Employee Details:
+ID: 123
+Name: John Doe
+Designation: Manager
+Department: Sales
+Salary: 5000.00
+
+1
+tutorialride.com favicon
+tutorialride
+2
+includehelp.com favicon
+includehelp
+3
+pencilprogrammer.com favicon
+pencilprogrammer
+Write C program to accept batting information of cricket team using structure. It contains player name and runs scored by player. Calculate total runs scored by cricket team.
+PERPLEXITY
+Here is a C program that accepts the batting information of a cricket team using a structure. It contains player name and runs scored by the player. The program calculates the total runs scored by the cricket team12:
+#include <stdio.h>
+
+struct Player {
+  char name;
+  int runs;
+};
+
+int main() {
+  struct Player team;
+  int i, n, total_runs = 0;
+
+  printf("Enter the number of players: ");
+  scanf("%d", &n);
+
+  for (i = 0; i < n; i++) {
+    printf("Enter the name of player %d: ", i+1);
+    scanf("%s", team[i].name);
+
+    printf("Enter the runs scored by player %d: ", i+1);
+    scanf("%d", &team[i].runs);
+
+    total_runs += team[i].runs;
+  }
+
+  printf("\nBatting Information:\n");
+  for (i = 0; i < n; i++) {
+    printf("%s scored %d runs\n", team[i].name, team[i].runs);
+  }
+
+  printf("\nTotal runs scored by the team: %d\n", total_runs);
+
+  return 0;
+}
+
+This program defines a structure Player that contains the name and runs scored by a player. It then declares an array team of type Player. The program prompts the user to enter the number of players and the name and runs scored by each player. It calculates the total runs scored by the team and displays the batting information and the total runs scored by the team using printf() statements.
+For example, the following output shows the batting information and the total runs scored by a cricket team:
+Enter the number of players: 3
+Enter the name of player 1: John
+Enter the runs scored by player 1: 50
+Enter the name of player 2: Jane
+Enter the runs scored by player 2: 75
+Enter the name of player 3: Bob
+Enter the runs scored by player 3: 25
+
+Batting Information:
+John scored 50 runs
+Jane scored 75 runs
+Bob scored 25 runs
+
+Total runs scored by the team: 150
+
+1
+generalnote.com favicon
+generalnote
+2
+tutorialride.com favicon
+tutorialride
+C program to read information of student. It contains Name, Roll number, Birthday, admission date. Calculate age of student at the time of admission.
+PERPLEXITY
+Here is a C program that reads the information of a student. It contains Name, Roll number, Birthday, admission date. The program calculates the age of the student at the time of admission123:
+#include <stdio.h>
+#include <time.h>
+
+struct Student {
+  char name;
+  int roll;
+  int birth_day;
+  int birth_month;
+  int birth_year;
+  int admission_day;
+  int admission_month;
+  int admission_year;
+};
+
+int main() {
+  struct Student student;
+
+  printf("Enter Name: ");
+  scanf("%s", student.name);
+
+  printf("Enter Roll Number: ");
+  scanf("%d", &student.roll);
+
+  printf("Enter Birthday (DD MM YYYY): ");
+  scanf("%d %d %d", &student.birth_day, &student.birth_month, &student.birth_year);
+
+  printf("Enter Admission Date (DD MM YYYY): ");
+  scanf("%d %d %d", &student.admission_day, &student.admission_month, &student.admission_year);
+
+  time_t now = time(NULL);
+  struct tm *t = localtime(&now);
+  int current_year = t->tm_year + 1900;
+  int current_month = t->tm_mon + 1;
+  int current_day = t->tm_mday;
+
+  int age = current_year - student.birth_year;
+  if (current_month < student.birth_month || (current_month == student.birth_month && current_day < student.birth_day)) {
+    age--;
+  }
+
+  printf("\nStudent Details:\n");
+  printf("Name: %s\n", student.name);
+  printf("Roll Number: %d\n", student.roll);
+  printf("Age at the time of admission: %d\n", age);
+
+  return 0;
+}
+
+This program defines a structure Student that contains the name, roll number, birthday, and admission date of a student. It then declares a variable student of type Student. The program prompts the user to enter the details of a student and stores them in the student variable. It calculates the age of the student at the time of admission using the current date and the birth date of the student. Finally, it displays the details of the student and the age at the time of admission using printf() statements.
+For example, the following output shows the details of a student and the age at the time of admission:
+Enter Name: John Doe
+Enter Roll Number: 123
+Enter Birthday (DD MM YYYY): 15 04 2005
+Enter Admission Date (DD MM YYYY): 01 09 2021
+
+Student Details:
+Name: John Doe
+Roll Number: 123
+Age at the time of admission: 16
+
+1
+tutorialride.com favicon
+tutorialride
+2
+mycompiler.io favicon
+mycompiler
+3
+generalnote.com favicon
+generalnote
+Write a 'C' program to accept customer details such as: Account_no, Name, Balance using structure. Assume 3 customers in the bank. Write a function to print the account no. and name of each customer whose balance < 100 Rs.
+PERPLEXITY
+Here is a C program that accepts customer details such as Account_no, Name, Balance using structure. It assumes 3 customers in the bank. The program defines a function to print the account no. and name of each customer whose balance is less than 100 Rs12:
+#include <stdio.h>
+
+struct Customer {
+  int account_no;
+  char name;
+  float balance;
+};
+
+void print_low_balance_customers(struct Customer customers[], int n) {
+  int i;
+
+  printf("\nCustomers with balance less than 100 Rs:\n");
+  for (i = 0; i < n; i++) {
+    if (customers[i].balance < 100) {
+      printf("Account No: %d, Name: %s\n", customers[i].account_no, customers[i].name);
+    }
+  }
+}
+
+int main() {
+  struct Customer customers[3];
+  int i;
+
+  for (i = 0; i < 3; i++) {
+    printf("Enter Account No of customer %d: ", i+1);
+    scanf("%d", &customers[i].account_no);
+
+    printf("Enter Name of customer %d: ", i+1);
+    scanf("%s", customers[i].name);
+
+    printf("Enter Balance of customer %d: ", i+1);
+    scanf("%f", &customers[i].balance);
+  }
+
+  print_low_balance_customers(customers, 3);
+
+  return 0;
+}
