@@ -1,0 +1,44 @@
+nes that contain​​ the search string​​ to the console​​:​
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_LINE_LENGTH 1024
+
+int main() {
+  // Prompt the user to enter the name of a file
+  char filename[MAX_LINE_LENGTH];
+  printf("Enter the name of a file: ");
+  fgets(filename, MAX_LINE_LENGTH, stdin);
+  filename[strcspn(filename, "\n")] = '\0';
+
+  // Prompt the user to enter a search string
+  char search_string[MAX_LINE_LENGTH];
+  printf("Enter a search string: ");
+  fgets(search_string, MAX_LINE_LENGTH, stdin);
+  search_string[strcspn(search_string, "\n")] = '\0';
+
+  // Open the file for reading
+  FILE *file = fopen(filename, "r");
+
+  // Check if the file was opened successfully
+  if (file == NULL) {
+    printf("Error opening file\n");
+    return 1;
+  }
+
+  // Read each line of the file
+  char line[MAX_LINE_LENGTH];
+  while (fgets(line, MAX_LINE_LENGTH, file) != NULL) {
+    // Check if the line contains the search string
+    if (strstr(line, search_string) != NULL) {
+      // Print the line to the console
+      printf("%s", line);
+    }
+  }
+
+  // Close the file
+  fclose(file);
+
+  return 0;
+}
