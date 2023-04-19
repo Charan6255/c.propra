@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  // Open the binary file for reading
+  FILE *file = fopen("data.bin", "rb");
+
+  // Check if the file was opened successfully
+  if (file == NULL) {
+    printf("Error opening file\n");
+    return 1;
+  }
+
+  // Get the size of the file
+  fseek(file, 0, SEEK_END);
+  long size = ftell(file);
+  fseek(file, 0, SEEK_SET);
+
+  // Allocate memory for the buffer
+  char *buffer = (char *) malloc(size);
+
+  // Read the binary data into the buffer
+  fread(buffer, 1, size, file);
+
+  // Convert the binary data to a human-readable format
+  for (int i = 0; i < size; i++) {
+    printf("%c", buffer[i]);
+  }
+
+  // Free the buffer
+  free(buffer);
+
+  // Close the file
+  fclose(file);
+
+  return 0;
+}
