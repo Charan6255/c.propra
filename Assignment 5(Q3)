@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_LINE_LENGTH 1024
+
+int main() {
+  // Open the input file for reading
+  FILE *input_file = fopen("input.txt", "r");
+
+  // Check if the file was opened successfully
+  if (input_file == NULL) {
+    printf("Error opening input file\n");
+    return 1;
+  }
+
+  // Open the output file for writing
+  FILE *output_file = fopen("output.txt", "w");
+
+  // Check if the file was opened successfully
+  if (output_file == NULL) {
+    printf("Error opening output file\n");
+    return 1;
+  }
+
+  // Read each line of the input file
+  char line[MAX_LINE_LENGTH];
+  while (fgets(line, MAX_LINE_LENGTH, input_file) != NULL) {
+    // Replace all occurrences of "red" with "blue"
+    char *pos = line;
+    while ((pos = strstr(pos, "red")) != NULL) {
+      strncpy(pos, "blue", 4);
+      pos += 4;
+    }
+
+    // Write the modified line to the output file
+    fputs(line, output_file);
+  }
+
+  // Close the input file
+  fclose(input_file);
+
+  // Close the output file
+  fclose(output_file);
+
+  return 0;
+}
