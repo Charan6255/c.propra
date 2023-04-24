@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+void square_cube(int num, int *square, int *cube);
+
+int main() {
+    int num, square, cube;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    square_cube(num, &square, &cube);
+
+    printf("Square of %d = %d\n", num, square);
+    printf("Cube of %d = %d\n", num, cube);
+
+    return 0;
+}
+
+void square_cube(int num, int *square, int *cube) {
+    *square = num * num;
+    *cube = num * num * num;
+}
