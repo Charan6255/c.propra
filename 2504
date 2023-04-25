@@ -1,0 +1,11 @@
+Write a program to find the number of composite numbers in an array of elements
+           Sample Input;:
+Array of elements = {16, 18, 27, 16, 23, 21, 19}
+Sample Output:
+Number of Composite Numbers = 5 
+Test cases:
+1.Array of elements = {26, 28, 37, 26, 33, 31, 29}
+2. Array of elements = {1.6, 1.8, 2.7, 1.6, 2.3, 2.1, .19}
+3. Array of elements = {0, 160, 180, 270, 160, 230, 210, 190, 0}
+4. Array of elements = {200, 180, 180, 270, 270, 270, 190, 200}
+5. Array of elements = {100, 100, 100, 100, 100, 100, 100, 100}
