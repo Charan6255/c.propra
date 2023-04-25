@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+  int x, y, *p, *q, max;
+
+  printf("Input the first number : ");
+  scanf("%d", &x);
+
+  printf("Input the second number : ");
+  scanf("%d", &y);
+
+  p = &x;
+  q = &y;
+
+  if (*p > *q) {
+    max = *p;
+  } else {
+    max = *q;
+  }
+
+  printf("%d is the maximum number.\n", max);
+
+  return 0;
+}
