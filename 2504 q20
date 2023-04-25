@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  int n, i;
+  double *data, max;
+
+  printf("Input total number of elements(1 to 100): ");
+  scanf("%d", &n);
+
+  data = (double *)calloc(n, sizeof(double));
+
+  for (i = 0; i < n; i++) {
+    printf("Number %d: ", i + 1);
+    scanf("%lf", &data[i]);
+  }
+
+  max = data;
+
+  for (i = 1; i < n; i++) {
+    if (data[i] > max) {
+      max = data[i];
+    }
+  }
+
+  printf("The Largest element is : %.2lf\n", max);
+
+  free(data);
+
+  return 0;
+}
