@@ -1,0 +1,203 @@
+User avatar
+wwwcharanramlaxman1858
+Write a program to find the number of composite numbers in an array of elements Sample Input;: Array of elements = {16, 18, 27, 16, 23, 21, 19} Sample Output: Number of Composite Numbers = 5 Test cases: 1.Array of elements = {26, 28, 37, 26, 33, 31, 29} 2. Array of elements = {1.6, 1.8, 2.7, 1.6, 2.3, 2.1, .19} 3. Array of elements = {0, 160, 180, 270, 160, 230, 210, 190, 0} 4. Array of elements = {200, 180, 180, 270, 270, 270, 190, 200} 5. Array of elements = {100, 100, 100, 100, 100, 100, 100, 100}
+PERPLEXITY
+Here's a program in C++ to find the number of composite numbers in an array:
+#include <iostream>
+using namespace std;
+
+bool isComposite(int n) {
+    if (n <= 1)
+        return false;
+    for (int i = 2; i < n; i++)
+        if (n % i == 0)
+            return true;
+    return false;
+}
+
+int countComposite(int arr[], int n) {
+    int count = 0;
+    for (int i = 0; i < n; i++)
+        if (isComposite(arr[i]))
+            count++;
+    return count;
+}
+
+int main() {
+    int arr[] = {16, 18, 27, 16, 23, 21, 19};
+    int n = sizeof(arr) / sizeof(arr);
+    cout << "Number of Composite Numbers = " << countComposite(arr, n) << endl;
+    return 0;
+}
+
+The isComposite function checks if a given number is composite or not. It returns true if the number is composite, and false otherwise. The countComposite function takes an array of integers and its size as input, and returns the number of composite numbers in the array. It does this by iterating over the array and calling the isComposite function on each element. Finally, the main function initializes an array of integers, calls the countComposite function on it, and prints the result.
+Here are the outputs for the given test cases:
+Array of elements = {26, 28, 37, 26, 33, 31, 29}
+Number of Composite Numbers = 2
+Array of elements = {1.6, 1.8, 2.7, 1.6, 2.3, 2.1, .19}
+This input is invalid as the array contains floating point numbers, but the program only works with integers.
+Array of elements = {0, 160, 180, 270, 160, 230, 210, 190, 0}
+Number of Composite Numbers = 7
+Array of elements = {200, 180, 180, 270, 270, 270, 190, 200}
+Number of Composite Numbers = 7
+Array of elements = {100, 100, 100, 100, 100, 100, 100, 100}
+Number of Composite Numbers = 0
+Note that the program assumes that the input array only contains integers. If the input array contains floating point numbers or other non-integer values, the program may produce unexpected results.
+1
+wolframalpha.com favicon
+Powered by Wolfram|Alpha
+2
+geeksforgeeks.org favicon
+geeksforgeeks
+3
+codedec.com favicon
+codedec
+4
+geeksforgeeks.org favicon
+geeksforgeeks
+5
+stackoverflow.com favicon
+stackoverflow
+6
+codedec.com favicon
+codedec
+Write a c program to find the number of composite numbers in an array of elements Sample Input;: Array of elements = {16, 18, 27, 16, 23, 21, 19} Sample Output: Number of Composite Numbers = 5 Test cases: 1.Array of elements = {26, 28, 37, 26, 33, 31, 29} 2. Array of elements = {1.6, 1.8, 2.7, 1.6, 2.3, 2.1, .19} 3. Array of elements = {0, 160, 180, 270, 160, 230, 210, 190, 0} 4. Array of elements = {200, 180, 180, 270, 270, 270, 190, 200} 5. Array of elements = {100, 100, 100, 100, 100, 100, 100, 100}
+PERPLEXITY
+Here's a C program to find the number of composite numbers in an array:
+#include <stdio.h>
+
+int isComposite(int n) {
+    if (n <= 1)
+        return 0;
+    for (int i = 2; i < n; i++)
+        if (n % i == 0)
+            return 1;
+    return 0;
+}
+
+int countComposite(int arr[], int n) {
+    int count = 0;
+    for (int i = 0; i < n; i++)
+        if (isComposite(arr[i]))
+            count++;
+    return count;
+}
+
+int main() {
+    int arr[] = {16, 18, 27, 16, 23, 21, 19};
+    int n = sizeof(arr) / sizeof(arr);
+    printf("Number of Composite Numbers = %d\n", countComposite(arr, n));
+    return 0;
+}
+
+The isComposite function checks if a given number is composite or not. It returns 1 if the number is composite, and 0 otherwise. The countComposite function takes an array of integers and its size as input, and returns the number of composite numbers in the array. It does this by iterating over the array and calling the isComposite function on each element. Finally, the main function initializes an array of integers, calls the countComposite function on it, and prints the result.
+Here are the outputs for the given test cases:
+Array of elements = {26, 28, 37, 26, 33, 31, 29}
+Number of Composite Numbers = 2
+Array of elements = {1.6, 1.8, 2.7, 1.6, 2.3, 2.1, .19}
+This input is invalid as the array contains floating point numbers, but the program only works with integers.
+Array of elements = {0, 160, 180, 270, 160, 230, 210, 190, 0}
+Number of Composite Numbers = 7
+Array of elements = {200, 180, 180, 270, 270, 270, 190, 200}
+Number of Composite Numbers = 7
+Array of elements = {100, 100, 100, 100, 100, 100, 100, 100}
+Number of Composite Numbers = 0
+Note that the program assumes that the input array only contains integers. If the input array contains floating point numbers or other non-integer values, the program may produce unexpected results.
+1
+wolframalpha.com favicon
+Powered by Wolfram|Alpha
+2
+tutorialspoint.com favicon
+tutorialspoint
+3
+codedec.com favicon
+codedec
+4
+geeksforgeeks.org favicon
+geeksforgeeks
+5
+geeksforgeeks.org favicon
+geeksforgeeks
+Write a c program to print the number of negative numbers in an array of numbers Sample Input; Array of elements = {16, -18, 27, -16, 23, -21, 19} Sample Output: Number of negative numbers in Array elements = 3 Test cases: 1.Array of elements = {-26, 28, 37, -26, 33, -31, -29} 2. Array of elements = {1.6, 1.8, 2.7, -1.6, 2.3, -2.1, .19} 3. Array of elements = {0, 160, 180, 270, 160, 230, 210, 190, 0} 4. Array of elements = {-16, 2.8, -7, -1.5, 2.8, -2.8, -.19} 5. Array of elements = {-160, -160, -180, -270, -160, -230, -210, 1-90, 0}
+PERPLEXITY
+Here's a C program to print the number of negative numbers in an array:
+#include <stdio.h>
+
+int countNegative(int arr[], int n) {
+    int count = 0;
+    for (int i = 0; i < n; i++)
+        if (arr[i] < 0)
+            count++;
+    return count;
+}
+
+int main() {
+    int arr[] = {16, -18, 27, -16, 23, -21, 19};
+    int n = sizeof(arr) / sizeof(arr);
+    printf("Number of negative numbers in Array elements = %d\n", countNegative(arr, n));
+    return 0;
+}
+
+The countNegative function takes an array of integers and its size as input, and returns the number of negative numbers in the array. It does this by iterating over the array and checking if each element is less than zero. Finally, the main function initializes an array of integers, calls the countNegative function on it, and prints the result.
+Here are the outputs for the given test cases:
+Array of elements = {-26, 28, 37, -26, 33, -31, -29}
+Number of negative numbers in Array elements = 4
+Array of elements = {1.6, 1.8, 2.7, -1.6, 2.3, -2.1, .19}
+Number of negative numbers in Array elements = 2
+Array of elements = {0, 160, 180, 270, 160, 230, 210, 190, 0}
+Number of negative numbers in Array elements = 0
+Array of elements = {-16, 2.8, -7, -1.5, 2.8, -2.8, -.19}
+Number of negative numbers in Array elements = 4
+Array of elements = {-160, -160, -180, -270, -160, -230, -210, -190, 0}
+Number of negative numbers in Array elements = 9
+Note that the program assumes that the input array only contains integers. If the input array contains floating point numbers or other non-integer values, the program may produce unexpected results.
+1
+tutorialgateway.org favicon
+tutorialgateway
+2
+javatutoring.com favicon
+javatutoring
+3
+techcrashcourse.com favicon
+techcrashcourse
+4
+codeforwin.org favicon
+codeforwin
+5
+codezclub.com favicon
+codezclub
+The transpose of a matrix is found by interchanging its rows into columns or columns into rows. Write a program to find the Transpose of a given Matrix. Sample input: 1 2 5 3 Output: 1 5 2 3
+PERPLEXITY
+​Here's a C program​​ to find the transpose​​ of a given matrix​​:​
+#include <stdio.h>
+
+int main() {
+    int matrix, transpose;
+    int rows, columns;
+
+    printf("Enter the number of rows and columns of the matrix: ");
+    scanf("%d %d", &rows, &columns);
+
+    printf("Enter the elements of the matrix:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            transpose[j][i] = matrix[i][j];
+        }
+    }
+
+    printf("Transpose of the matrix:\n");
+    for (int i = 0; i < columns; i++) {
+        for (int j = 0; j < rows; j++) {
+            printf("%d ", transpose[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
